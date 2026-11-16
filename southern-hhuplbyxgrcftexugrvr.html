@@ -1,0 +1,667 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Southern Insurance Group Dashboard</title>
+<style>
+:root { --font-anthropic-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --font-anthropic-serif: Georgia, "Times New Roman", serif;
+  --color-bg:#f7f6f2; --color-panel:#ffffff; --color-fg:#1f1e1b; --color-fg-muted:#6b675e; --color-border-line:#e3e0d7;
+  --color-ok:#2f7d4f; --color-warn:#a2541b; --color-bad:#b3261e;
+  --cds-gap-xs:6px; --cds-gap-sm:10px; --cds-gap-md:14px; --cds-gap-lg:20px; --cds-gap-xl:32px;
+  --cds-pad-sm:8px; --cds-pad-md:12px; --cds-pad-lg:18px; --cds-radius:10px;
+  --cds-font-size-title:30px; --cds-font-size-heading:19px; --cds-font-size-body:15px; --cds-font-size-caption:13px; --cds-font-weight-medium:600;
+  color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --color-bg:#1b1a17; --color-panel:#24231f; --color-fg:#ecebe6; --color-fg-muted:#a6a298; --color-border-line:#3a3832; --color-ok:#5fbf86; --color-warn:#e0955a; --color-bad:#f07a70; color-scheme: dark; } }
+:root[data-theme="dark"] { --color-bg:#1b1a17; --color-panel:#24231f; --color-fg:#ecebe6; --color-fg-muted:#a6a298; --color-border-line:#3a3832; --color-ok:#5fbf86; --color-warn:#e0955a; --color-bad:#f07a70; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); font-size: 15px; }
+.rose-page { max-width: 1120px; margin: 0 auto; padding: 28px 16px 48px; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+</head><body><div class="rose-page">
+<script type="application/json" id="rose-data">{"data": {"action_items": [{"key": "a01", "owner": "Caleb Jowers", "task": "Get revised BTP Logistics quote and close", "due": "2026-11-15", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a02", "owner": "Caleb Jowers", "task": "Call Rene (Midlands Framing) to reschedule the discovery meeting", "due": "", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a03", "owner": "Caleb Jowers", "task": "Send ARC Excess & Surplus info to David", "due": "", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a04", "owner": "Jackson Hilton", "task": "Submit Premier Sports Lighting to Liberty Mutual and Cincinnati", "due": "", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a05", "owner": "Jackson Hilton", "task": "Follow up with the landscaping client on their broker decision", "due": "", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a06", "owner": "Jackson Hilton", "task": "Put 60% of prospecting on renewals 30–90 days out; test drive-time, speed-dial and walk-in tactics", "due": "", "active": "Yes", "from": "2027 Planning Call 11/6", "done_on": "", "done_note": ""}, {"key": "a07", "owner": "Jackson Hilton", "task": "Start informal check-ins with AMs (Jamie, Sara, Kelly)", "due": "", "active": "Yes", "from": "2027 Planning Call 11/6", "done_on": "", "done_note": ""}, {"key": "a08", "owner": "Rachel Rogers", "task": "Update 2027 plan with the property-investor focus and outreach schedule", "due": "", "active": "Yes", "from": "2027 Planning Call 11/9", "done_on": "", "done_note": ""}, {"key": "a09", "owner": "Rachel Rogers", "task": "Present December work plan (service coverage, lead handling) to David", "due": "", "active": "Yes", "from": "2027 Planning Call 11/9", "done_on": "", "done_note": ""}, {"key": "a10", "owner": "Rachel Rogers", "task": "Research the CIC designation", "due": "", "active": "Yes", "from": "2027 Planning Call 11/9", "done_on": "", "done_note": ""}, {"key": "a11", "owner": "David Ashton", "task": "Prepare for the Builders Mutual meeting", "due": "2026-12-02", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a12", "owner": "David Ashton", "task": "Research market access for the AIG/Arrowhead towing program", "due": "", "active": "Yes", "from": "CL Sales Meeting 11/9", "done_on": "", "done_note": ""}, {"key": "a13", "owner": "David Ashton", "task": "Finalize Jackson's phantom stock agreement", "due": "2026-11-23", "active": "Yes", "from": "David | Patrick BiWeekly 11/9", "done_on": "", "done_note": ""}, {"key": "a14", "owner": "David Ashton", "task": "Follow up with HR (Diane Sass) on a team benefits question", "due": "", "active": "Yes", "from": "David | Patrick BiWeekly 11/9", "done_on": "", "done_note": ""}, {"key": "a15", "owner": "David Ashton", "task": "Send Patrick a sample P&L with year-over-year comparisons; ask Stephanie Gottler to add YOY %", "due": "", "active": "No", "from": "David | Patrick BiWeekly 11/9", "done_on": "2026-11-09", "done_note": "David emailed the P&L format to Patrick and Stephanie 11/9; Stephanie agreed to use it."}, {"key": "a17", "owner": "Jenn Butler", "task": "Update scorecards to require manual QQ notes for all communication", "due": "", "active": "Yes", "from": "Jenn & Savannah 11/3", "done_on": "", "done_note": ""}, {"key": "a18", "owner": "Jenn Butler", "task": "Send Savannah the list of scorecard additions from David", "due": "", "active": "No", "from": "Jenn & Savannah 11/3", "done_on": "2026-11-10", "done_note": "Savannah's 11/10 email confirms she added the items Jenn sent to the new audit."}, {"key": "a19", "owner": "Jenn Butler", "task": "Launch mandatory carrier training in service meetings, starting with Allie", "due": "", "active": "Yes", "from": "Jenn & Savannah 11/3", "done_on": "", "done_note": ""}, {"key": "a20", "owner": "Jenn Butler", "task": "Update the <20% renewal template and confirm the daily remarketing-tracker review (48-hour turnaround)", "due": "", "active": "Yes", "from": "Jenn & Savannah 11/3", "done_on": "", "done_note": ""}, {"key": "a21", "owner": "Jenn Butler", "task": "Reinforce the issue escalation path in the sales meeting", "due": "", "active": "Yes", "from": "Jenn & Savannah 11/3", "done_on": "", "done_note": ""}, {"key": "a22", "owner": "Caleb Jowers", "task": "Schedule weekly 30–60 min huddles with Jackson on carriers, quoting and account handoffs", "due": "", "active": "Yes", "from": "2027 Planning Call 11/10", "done_on": "", "done_note": ""}, {"key": "a23", "owner": "Caleb Jowers", "task": "Reach out to underwriters (e.g., Caitlin at Invo) to learn appetites and strengthen submissions", "due": "", "active": "Yes", "from": "2027 Planning Call 11/10", "done_on": "", "done_note": ""}, {"key": "a24", "owner": "Caleb Jowers", "task": "Revisit the Colonial Life benefits cross-sell idea with David", "due": "", "active": "Yes", "from": "2027 Planning Call 11/10", "done_on": "", "done_note": ""}, {"key": "a25", "owner": "Jenn Butler", "task": "Ask Mark to add a request-type column to the VA tracker and resend it", "due": "", "active": "Yes", "from": "Jenn and Savannah (SC Review) 11/11", "done_on": "", "done_note": ""}, {"key": "a26", "owner": "Jenn Butler", "task": "Send Savannah the remaining producer book reports, confirm the Emily/Andrew book move, and send lost-business reports", "due": "2026-11-17", "active": "Yes", "from": "Savannah email 11/12", "done_on": "", "done_note": ""}], "library": {"files": [{"id": "1HHwr8uwIVFpJp26BvvNJ3Ci9L1Ny_ecWPi23mUcAAMg", "title": "Southern Insured Leadership Call Agenda", "mimeType": "application/vnd.google-apps.document", "modifiedTime": "2026-11-13T12:42:32.739Z", "viewUrl": "https://docs.google.com/document/d/1HHwr8uwIVFpJp26BvvNJ3Ci9L1Ny_ecWPi23mUcAAMg/edit?usp=drivesdk"}, {"id": "1X3VfnMkTjAnC0nhhbo9KELkmc2isI49n", "title": "2027 Goal Plans", "mimeType": "application/vnd.google-apps.folder", "modifiedTime": "2026-11-12T13:54:54.761Z", "viewUrl": "https://drive.google.com/drive/folders/1X3VfnMkTjAnC0nhhbo9KELkmc2isI49n"}, {"id": "19OaQ1wizy9gdknaR-BLGidioTQtA0KL2", "title": "2026 Sales Reviews", "mimeType": "application/vnd.google-apps.folder", "modifiedTime": "2026-11-12T13:54:53.731Z", "viewUrl": "https://drive.google.com/drive/folders/19OaQ1wizy9gdknaR-BLGidioTQtA0KL2"}, {"id": "1bDk651O_WNhPvYfdmXkv5biri447-WJR", "title": "Jackson 2026 Sales Review", "mimeType": "application/pdf", "modifiedTime": "2026-11-12T16:52:14.742Z", "viewUrl": "https://drive.google.com/file/d/1bDk651O_WNhPvYfdmXkv5biri447-WJR/view?usp=drivesdk", "folder": "2026 Sales Reviews", "folderUrl": "https://drive.google.com/drive/folders/19OaQ1wizy9gdknaR-BLGidioTQtA0KL2"}, {"id": "1MhxYK8B2rZmly0gkvT0Hsoj6lnId_pVp", "title": "Rachel Rogers 2026 Sales Review", "mimeType": "application/pdf", "modifiedTime": "2026-11-13T00:46:31.054Z", "viewUrl": "https://drive.google.com/file/d/1MhxYK8B2rZmly0gkvT0Hsoj6lnId_pVp/view?usp=drivesdk", "folder": "2026 Sales Reviews", "folderUrl": "https://drive.google.com/drive/folders/19OaQ1wizy9gdknaR-BLGidioTQtA0KL2"}, {"id": "1vagcBKzgIOcI6KoUXobzWfWvkE5ug0jw", "title": "Rachel Rogers 2026 YTD Sales Summary", "mimeType": "application/pdf", "modifiedTime": "2026-11-12T16:51:56.620Z", "viewUrl": "https://drive.google.com/file/d/1vagcBKzgIOcI6KoUXobzWfWvkE5ug0jw/view?usp=drivesdk", "folder": "2026 Sales Reviews", "folderUrl": "https://drive.google.com/drive/folders/19OaQ1wizy9gdknaR-BLGidioTQtA0KL2"}, {"id": "1HPcCEtySaiDXX7qjFNvZNUZwj5j8P1oj", "title": "2027 Caleb Sales Plan", "mimeType": "application/pdf", "modifiedTime": "2026-11-12T16:56:17.690Z", "viewUrl": "https://drive.google.com/file/d/1HPcCEtySaiDXX7qjFNvZNUZwj5j8P1oj/view?usp=drivesdk", "folder": "2027 Goal Plans", "folderUrl": "https://drive.google.com/drive/folders/1X3VfnMkTjAnC0nhhbo9KELkmc2isI49n"}, {"id": "1cpvu5pEyQmByCTnThcAkOzC3khZvP52z", "title": "2027 Rachel Sales Plan", "mimeType": "application/pdf", "modifiedTime": "2026-11-12T16:55:09.581Z", "viewUrl": "https://drive.google.com/file/d/1cpvu5pEyQmByCTnThcAkOzC3khZvP52z/view?usp=drivesdk", "folder": "2027 Goal Plans", "folderUrl": "https://drive.google.com/drive/folders/1X3VfnMkTjAnC0nhhbo9KELkmc2isI49n"}, {"id": "1NnIOqOr0vv0NaWtDXrZjKCwEoWxL7CDM", "title": "Jackson 2027 Sales Plan", "mimeType": "application/pdf", "modifiedTime": "2026-11-13T00:47:21.041Z", "viewUrl": "https://drive.google.com/file/d/1NnIOqOr0vv0NaWtDXrZjKCwEoWxL7CDM/view?usp=drivesdk", "folder": "2027 Goal Plans", "folderUrl": "https://drive.google.com/drive/folders/1X3VfnMkTjAnC0nhhbo9KELkmc2isI49n"}]}, "meetings": {"results": [{"id": 418458398417, "properties": {"hs_meeting_start_time": "2027-01-04T18:30:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "David (Southern Insured) | Patrick BiWeekly"}}, {"id": 414883602117, "properties": {"hs_meeting_start_time": "2026-12-29T19:30:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn & Savannah"}}, {"id": 418588396218, "properties": {"hs_meeting_start_time": "2026-12-21T18:30:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "David (Southern Insured) | Patrick BiWeekly"}}, {"id": 414883066598, "properties": {"hs_meeting_start_time": "2026-12-15T19:30:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn & Savannah"}}, {"id": 415312621288, "properties": {"hs_meeting_start_time": "2026-12-12T22:30:00Z", "hs_attendee_owner_ids": "170042000", "hubspot_owner_id": "170042000", "hs_meeting_title": "SIG Christmas Party "}}, {"id": 418463799016, "properties": {"hs_meeting_start_time": "2026-12-08T15:30:00Z", "hs_attendee_owner_ids": "170042000", "hubspot_owner_id": "87139050", "hs_meeting_title": "Southern Insured Year End Review/Planning Call | Patrick McClure"}}, {"id": 414801586894, "properties": {"hs_meeting_start_time": "2026-12-01T19:30:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn & Savannah"}}, {"id": 411228023497, "properties": {"hs_meeting_start_time": "2026-11-30T16:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting"}}, {"id": 420078390973, "properties": {"hs_meeting_start_time": "2026-11-24T16:00:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "David A. & Patrick Call"}}, {"id": 407464351451, "properties": {"hs_meeting_start_time": "2026-11-23T16:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting"}}, {"id": 420689870574, "properties": {"hs_meeting_start_time": "2026-11-19T18:00:00Z", "hs_attendee_owner_ids": "87139050;170042000", "hubspot_owner_id": "87139050", "hs_meeting_title": "If You Grew 20% Tomorrow… What Would Break? | PIIP Mastermind"}}, {"id": 414868889303, "properties": {"hs_meeting_start_time": "2026-11-17T19:30:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn & Savannah"}}, {"id": 407519928044, "properties": {"hs_meeting_start_time": "2026-11-16T16:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting"}}, {"id": 419827571397, "properties": {"hs_meeting_start_time": "2026-11-11T18:00:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn and Savannah (SC Review)", "hs_meeting_outcome": "COMPLETED"}}, {"id": 407492842211, "properties": {"hs_meeting_start_time": "2026-11-10T18:30:00Z", "hs_attendee_owner_ids": "170041932", "hubspot_owner_id": "87139050", "hs_meeting_title": "2027 Planning Call (Caleb/ Patrick )", "hs_meeting_outcome": "COMPLETED"}}, {"id": 414461036234, "properties": {"hs_meeting_start_time": "2026-11-09T18:30:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "David (Southern Insured) | Patrick BiWeekly", "hs_meeting_outcome": "COMPLETED"}}, {"id": 407521466054, "properties": {"hs_meeting_start_time": "2026-11-09T16:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting", "hs_meeting_outcome": "COMPLETED"}}, {"id": 407495065332, "properties": {"hs_meeting_start_time": "2026-11-09T16:00:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "2027 Planning Call (Rachel / Patrick )", "hs_meeting_outcome": "COMPLETED"}}, {"id": 407865878216, "properties": {"hs_meeting_start_time": "2026-11-06T14:00:00Z", "hs_attendee_owner_ids": "170041932", "hubspot_owner_id": "87139050", "hs_meeting_title": "2027 Planning Call (Jackson/Patrick)", "hs_meeting_outcome": "COMPLETED"}}, {"id": 415101812419, "properties": {"hs_meeting_start_time": "2026-11-05T16:00:00Z", "hs_attendee_owner_ids": "170042000", "hubspot_owner_id": "170042000", "hs_meeting_title": "Service Meeting"}}, {"id": 414868889304, "properties": {"hs_meeting_start_time": "2026-11-03T19:30:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn & Savannah"}}, {"id": 407521560266, "properties": {"hs_meeting_start_time": "2026-11-02T16:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting", "hs_meeting_outcome": "COMPLETED"}}, {"id": 407512366795, "properties": {"hs_meeting_start_time": "2026-10-30T15:00:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "2026 Sales Review Call (Rachel / Patrick )", "hs_meeting_outcome": "COMPLETED"}}, {"id": 408693415637, "properties": {"hs_meeting_start_time": "2026-10-22T19:00:00Z", "hs_attendee_owner_ids": "169105455", "hubspot_owner_id": "87139050", "hs_meeting_title": "David Ashton & Patrick "}}, {"id": 407856595674, "properties": {"hs_meeting_start_time": "2026-10-22T14:00:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "2026 Sales Review (Jackson/Patrick)"}}, {"id": 414864187068, "properties": {"hs_meeting_start_time": "2026-10-20T19:00:00Z", "hubspot_owner_id": "170042000", "hs_meeting_title": "Jenn & Savannah"}}, {"id": 407520924391, "properties": {"hs_meeting_start_time": "2026-10-19T15:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting"}}, {"id": 399842618078, "properties": {"hs_meeting_start_time": "2026-10-14T18:30:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "Southern Insurance Group CFO Review 2027 Budget "}}, {"id": 406313656010, "properties": {"hs_meeting_start_time": "2026-10-12T15:00:00Z", "hs_attendee_owner_ids": "87139050", "hubspot_owner_id": "87139050", "hs_meeting_title": "CL Sales Meeting"}}, {"id": 411360520897, "properties": {"hs_meeting_start_time": "2026-10-09T13:00:00Z", "hubspot_owner_id": "87139050", "hs_meeting_title": "Caleb & Patrick Meet"}}]}, "owners": {"owners": [{"ownerId": 26684738, "name": "Joachim Koch", "isActive": false}, {"ownerId": 87139050, "name": "Patrick McClure", "isActive": true}, {"ownerId": 164569925, "name": "Hunter Dye", "isActive": false}, {"ownerId": 164569926, "name": "Mark McClure", "isActive": true}, {"ownerId": 164569927, "name": "Jenni Farmer", "isActive": true}, {"ownerId": 165899946, "name": "Emily Ballinger", "isActive": true}, {"ownerId": 169105455, "name": "Michele Carbone", "isActive": true}, {"ownerId": 170041932, "name": "Zach Uvodich", "isActive": true}, {"ownerId": 170042000, "name": "Savannah Mills", "isActive": true}]}, "people": [{"key": "jackson", "section": "sales", "order": 1, "name": "Jackson Hilton", "role": "Commercial Lines Risk Advisor", "active": "Yes", "match": "Jackson|CL Sales Meeting", "ipt_owner": "", "hubspot_id": "513052412655", "fallback_last_date": "2026-11-09", "fallback_last_title": "CL Sales Meeting", "fallback_last_with": "Patrick McClure, Zach Uvodich", "fallback_next_date": "", "fallback_next_title": "", "fallback_next_with": "", "working_on": "2027 plan (11/6): 60% of prospecting on renewals 30–90 days out, where clients are most ready to switch\nRevenue floor lowered from $10K to $5K per account, targeting low-maintenance standard risks (Country Lawn & Tractor is the model: ~$52K premium, won by BOR, saved the client $10K)\nTesting new lead tactics: 2 hours of drive-time scouting, a 100-call speed-dial day on 30–60 day renewals, and a walk-in week\nBuilding carrier knowledge and starting informal check-ins with AMs (Jamie, Sara, Kelly); asked Patrick for accountability coaching", "as_of": "2026-11-06", "source": "Fathom: 2027 Planning Call 11/6; HubSpot pre-call notes", "history": "[{\"as_of\": \"2026-10-22\", \"meeting\": \"2026 Sales Review\", \"working_on\": \"Projecting ~$100K revenue for 2026 ($82K so far net of losses)\\nRecent wins: Red Oak Developers (~$70K E&S premium) and a Liberty Mutual WC account (~$45K premium)\\nVPS ($300K premium): RPS is the only market; waiting on the marketing report and excess quote before presenting\\nNew two-way referral partner: Head Financial\\nHK Construction: won the WC policy; working on the rest of the package (~$11–12K premium, renews Jan 5)\\n$45K HOA (Travelers): checking the bylaws before quoting\"}]"}, {"key": "rachel", "section": "sales", "order": 2, "name": "Rachel Rogers", "role": "Senior Insurance Advisor", "active": "Yes", "match": "Rachel|CL Sales Meeting", "ipt_owner": "", "hubspot_id": "513052412657", "fallback_last_date": "2026-11-09", "fallback_last_title": "2027 Planning Call (Rachel / Patrick)", "fallback_last_with": "Patrick McClure", "fallback_next_date": "", "fallback_next_title": "", "fallback_next_with": "", "working_on": "Closed a $153K account ($100K auto, $33K GL and $20K WC by AOR); 2026 new premium now about $800K\nCommission on the $53K AOR portion is deferred to 2027\n2027 goal: $720K new premium (+20%), with a target of $600K by July 1\nRaising quoting to about 34 accounts a month and shifting to larger commercial accounts\nBuilding a personal brand as the go-to for organizing property-investor insurance portfolios\nDecember: holding new business for 1/1 effective dates, presenting a December work plan to David, researching the CIC designation", "as_of": "2026-11-09", "source": "Fathom: 2027 Planning Call 11/9; HubSpot pre-call notes", "history": "[{\"as_of\": \"2026-10-30\", \"meeting\": \"2026 Sales Review\", \"working_on\": \"About 63% of the way to her $900K–$1M goal, with ~$179K in pipeline through year-end\\nKey opportunities: DNV ($26K, AORs signed), a tobacco wholesaler, Rainbow Vacuums (quoted), Aquinox and a Montessori school\\nMotel account: submitting to AmWins or CRC\"}]"}, {"key": "caleb", "section": "sales", "order": 3, "name": "Caleb Jowers", "role": "Commercial Lines Producer (new)", "active": "Yes", "match": "Caleb|CL Sales Meeting", "ipt_owner": "", "hubspot_id": "567466290914", "fallback_last_date": "2026-11-09", "fallback_last_title": "CL Sales Meeting", "fallback_last_with": "Patrick McClure, Zach Uvodich", "fallback_next_date": "2026-11-10", "fallback_next_title": "2027 Planning Call (Caleb / Patrick)", "fallback_next_with": "Patrick McClure, Zach Uvodich", "working_on": "2027 goal: $85K new business revenue ($65K self-generated, $20K from referrals)\nActivity plan: 25 calls a day for 2 appointments a week in construction, manufacturing and transportation\nBinding BTP Logistics: about $40K premium, down from a $120K Geico renewal\nVeranda Homes (~$350K, August renewal) is the key prospect; rescheduling the Midlands Framing discovery meeting\nSetting up weekly huddles with Jackson and reaching out to underwriters\nPursuing the CRS designation; raising a Colonial Life benefits cross-sell with David", "as_of": "2026-11-10", "source": "HubSpot: 2027 Planning Call 11/10 and recap email", "history": "[]"}, {"key": "peyton", "section": "sales", "order": 4, "name": "Peyton Keeley", "role": "Commercial Lines Producer (former)", "active": "No", "match": "Peyton", "ipt_owner": "", "hubspot_id": "513052412656", "fallback_last_date": "2026-10-05", "fallback_last_title": "CL Sales Meeting", "fallback_last_with": "Patrick McClure", "fallback_next_date": "", "fallback_next_title": "", "fallback_next_with": "", "working_on": "No longer with SIG\nVPS notes handed to Jackson (10/6)\nPrepaid Bob Paskins coaching time to be reassigned (Tim is the likely fit)", "as_of": "2026-11-06", "source": "HubSpot pre-call notes 11/6; Gmail 10/6", "history": "[]"}, {"key": "sales_call", "section": "sales_call", "order": 1, "name": "CL Sales Meeting (weekly)", "role": "David, Jackson, Rachel, Caleb + IPT", "active": "Yes", "match": "CL Sales Meeting", "ipt_owner": "", "hubspot_id": "", "fallback_last_date": "2026-11-09", "fallback_last_title": "CL Sales Meeting", "fallback_last_with": "Patrick McClure, Zach Uvodich", "fallback_next_date": "2026-11-16", "fallback_next_title": "CL Sales Meeting", "fallback_next_with": "Patrick McClure", "working_on": "BTP Logistics: $68K wholesale quote vs. a $120K Geico renewal; revised quote after a truck was removed, closing 11/15\nCarriers: prioritizing a Builders Mutual appointment (meeting 12/2) over Penn National, since it opens standard markets for GCs and installation contractors\nNew rule: offer monoline cyber to every new client, with a signed declination if they refuse (E&O protection)\nTowing/trucking: current wholesale access is enough; defer new appointments like TUMD until volume grows\nRoofing GC work comp (class 5606) has no voluntary market and is heading to the assigned risk pool\nExploring ARC Excess & Surplus for cyber and management liability", "as_of": "2026-11-09", "source": "Fathom: CL Sales Meeting 11/9", "history": "[{\"as_of\": \"2026-11-02\", \"meeting\": \"CL Sales Meeting\", \"working_on\": \"Pi WC AOR (~$30K, renews 11/22) and the ~$100K towing BOR\\nLandscaping 1/1 renewal and an AI consulting prospect\\nGuard: the same appointment covers middle market; hit ratios 25% auto, 25.3% BOP, 36% WC; monoline GL coming Q1\\nWestfield middle-market follow-up needed; Amerisafe appointment pending\"}, {\"as_of\": \"2026-10-26\", \"meeting\": \"CL Sales Meeting\", \"working_on\": \"Frontline Commercial training: non-admitted, property-only carrier in SC; $5K minimum premium, $80M max TIV\\nSubmit to commercial@flhi.com with ACORD 125/140, SOV, 3-year loss runs and an appraisal; the first agent to submit locks the risk for 90 days\\nBuilder's risk portal with instant quotes launching in November\\nGeico Direct took a client's policy despite a signed AOR; being escalated\"}]"}, {"key": "david", "section": "leadership", "order": 1, "name": "David Ashton", "role": "Agency Owner", "active": "Yes", "match": "David|Year End Review|CFO Review", "ipt_owner": "87139050", "hubspot_id": "484939395816", "fallback_last_date": "2026-11-09", "fallback_last_title": "David | Patrick BiWeekly", "fallback_last_with": "Patrick McClure", "fallback_next_date": "2026-12-08", "fallback_next_title": "Year End Review / Planning Call", "fallback_next_with": "Patrick McClure, Savannah Mills", "working_on": "Retention at 85%: scorecards are live (rebuilt 11/10), Time Doctor is rolling out, and the new renewal process requires 3 follow-ups, 3–4 carrier quotes and a VA remarket log\nReviewing the inside sales compensation plan to move four current employees into the role; agreed 11/11 to a 30-minute call with Patrick to finalize it before year end\nFinalizing Jackson's 25% phantom stock, excluding only inherited (acquired) accounts\nNegotiating the Grayson Thomas book (~$500K revenue, mostly personal lines) at 2.5x for Q1 2027, with owner financing\n2027 target: about $4.2M revenue at a 20% operating margin, shifting focus from growth to profitability\nBuilders Mutual meeting 12/2; completing the AmeriSafe work comp application; adding year-over-year comparisons to monthly P&Ls", "as_of": "2026-11-11", "source": "HubSpot: David | Patrick BiWeekly 11/9; emails 11/10–11/11", "history": "[{\"as_of\": \"2026-11-10\", \"working_on\": \"Retention at 85%: scorecards are live (rebuilt 11/10), Time Doctor is rolling out, and the new renewal process requires 3 follow-ups, 3–4 carrier quotes and a VA remarket log\\nReviewing the inside sales compensation plan to move four current employees into the role\\nFinalizing Jackson's 25% phantom stock, excluding only inherited (acquired) accounts\\nNegotiating the Grayson Thomas book (~$500K revenue, mostly personal lines) at 2.5x for Q1 2027, with owner financing\\n2027 target: about $4.2M revenue at a 20% operating margin, shifting focus from growth to profitability\\nBuilders Mutual meeting 12/2; completing the AmeriSafe work comp application; adding year-over-year comparisons to monthly P&Ls\"}, {\"as_of\": \"2026-11-09\", \"meeting\": \"David | Patrick BiWeekly\", \"working_on\": \"Retention at 85%: scorecards live, Time Doctor rolling out, new renewal process (3 follow-ups, 3–4 carrier quotes, VA remarket log)\\nFinalizing Jackson's 25% phantom stock within two weeks\\nNegotiating the Grayson Thomas book (~$500K revenue, 2.5x) for Q1 2027\\n2027 target ~$4.2M revenue at a 20% operating margin\\nBuilders Mutual meeting 12/2; AmeriSafe application\"}, {\"as_of\": \"2026-10-22\", \"meeting\": \"David Ashton & Patrick\", \"working_on\": \"Retention root-cause review and an AM capacity standard (~$350–400K revenue per PL AM)\\nAM tool training (PL Raider, Gaia) in weekly service meetings\\nTeam Claude subscription pending a compliance check\\nCarrier profit shares: Cincinnati Q3, Auto-Owners ~$59K, SIAA quarterly\\nBuilders Mutual follow-up; Westfield, Liberty Mutual and Hartford access\\nRadio advertising (~$1,000/week) under review\"}]"}, {"key": "jenn", "section": "service", "order": 1, "name": "Jenn Butler", "role": "Service lead", "active": "Yes", "match": "Jenn & Savannah|Year End Review", "ipt_owner": "170042000", "hubspot_id": "534538660577", "fallback_last_date": "2026-11-11", "fallback_last_title": "Jenn and Savannah (SC Review)", "fallback_last_with": "Savannah Mills", "fallback_next_date": "2026-11-17", "fallback_next_title": "Jenn & Savannah", "fallback_next_with": "Savannah Mills", "working_on": "Switched to the new scorecard (11/11), which calculates everything automatically and leaves more time for analysis\nConfirmed the VA workflow: all service work (vehicle/driver changes, underwriting, billing) goes to the VAs; AMs only send applications and cancellation requests\nAsking Mark to add a request-type column to the VA tracker so retention bottlenecks can be diagnosed\nDonna's weekly renewal routine (print and highlight Monday, VA quotes back midweek, follow up the next Tuesday) is the model for renewal management\nSent Savannah AM book assignments and Active Book of Business reports (11/12), then the additional producer reports and the Emily/Andrew book history (11/13); lost-business reports still due 11/17\nRequiring manual QQ notes for all client communication; carrier training in service meetings (Allie first)", "as_of": "2026-11-13", "source": "Fathom: Jenn and Savannah (SC Review) 11/11; HubSpot emails 11/12–11/13", "history": "[{\"as_of\": \"2026-11-10\", \"working_on\": \"Reviewed the rebuilt PL AM scorecard and audit (11/10), now covering ancillary policies, email syncing, 3–4 carrier quotes, the VA remarket log and proactive reviews; called it perfect\\nReconciling October scorecards with audit results, with a review call on 11/11\\nClarifying how VA work is assigned and tracked\\nRequiring manual QQ notes for all client communication\\nLaunching carrier training in service meetings (Allie presents first)\\nDaily remarketing-tracker review with a 48-hour turnaround\"}, {\"as_of\": \"2026-11-03\", \"meeting\": \"Jenn & Savannah\", \"working_on\": \"Updating scorecards to require manual QQ notes for all client communication\\nLaunching carrier training in service meetings\\nReinforcing the issue escalation path\\nUpdating the <20% renewal template and the daily remarketing-tracker review (48-hour turnaround)\"}]"}, {"key": "service_team", "section": "service", "order": 2, "name": "Service Team (Service Meeting)", "role": "Account managers & VAs", "active": "Yes", "match": "Service Meeting", "ipt_owner": "170042000", "hubspot_id": "", "fallback_last_date": "2026-11-05", "fallback_last_title": "Service Meeting", "fallback_last_with": "Savannah Mills", "fallback_next_date": "", "fallback_next_title": "", "fallback_next_with": "", "working_on": "Savannah is reviewing retention and AM workload: October 2026 retention report from PFS received 11/13, AM book assignments and most producer book reports in hand; lost-business reports still pending\nNext step is about an hour of sit-in time with each AM to walk through their day and renewal list\nAll service work goes to the VAs; AMs only send applications and cancellation requests\nVA tracker is getting a request-type column to show where time goes\nRemarketing triage: remarket increases of $400+, do a policy review for increases under $200\nCarrier training added to service meetings, one AM presenting every two weeks", "as_of": "2026-11-13", "source": "HubSpot emails 11/12–11/13; Fathom: Jenn and Savannah (SC Review) 11/11", "history": "[{\"as_of\": \"2026-11-10\", \"working_on\": \"Reconciling October scorecards with audit results\\nDocumentation accuracy and VA utilization were scored 100% with nothing tracking them; the rebuilt scorecard now counts both from audited files\\nOpen questions on which service work goes to the VAs and how it is tracked\\nPayment follow-ups limited to a single contact to avoid E&O exposure\\nRemarketing triage: remarket increases of $400+, do a policy review for increases under $200\\nCarrier training added to service meetings, one AM presenting every two weeks\"}, {\"as_of\": \"2026-10-23\", \"meeting\": \"Service Meeting\", \"working_on\": \"Single-contact policy for payment follow-ups (E&O risk)\\nRemarketing triage: remarket increases of $400+, policy review for increases under $200\\nAgents consulted on their remarketing preferences for their books\"}]"}], "recruiting": [{"key": "cl_producer", "order": 1, "role": "Commercial Lines Producer", "active": "Yes", "stage": "Role filled", "hire": "Caleb Jowers", "notes": "Caleb started in October 2026 (90-day onboarding plan sent 10/2). Now in weekly CL Sales Meetings; 2027 planning call 11/10.", "as_of": "2026-11-09", "source": "Gmail 10/2; HubSpot; Fathom 11/9"}, {"key": "pl_am", "order": 2, "role": "Personal Lines Account Manager (next hire)", "active": "No", "stage": "Not started", "hire": "", "notes": "Not open. David wants a capacity standard (~$350–400K revenue per PL AM) to decide when the next PL AM is needed in 2027.", "as_of": "2026-11-06", "source": "HubSpot pre-call notes 11/6"}, {"key": "inside_sales", "order": 3, "role": "Inside Sales team", "active": "No", "stage": "Not started", "hire": "", "notes": "Not open. 2027 plan is to invest in a high-performing inside sales team; inside sales comp plan still pending with Carey (Agency Focus).", "as_of": "2026-11-09", "source": "Fathom: David | Patrick BiWeekly 11/9"}, {"key": "oos_producer", "order": 4, "role": "Out-of-state Producer", "active": "No", "stage": "Not started", "hire": "", "notes": "David declined on 11/6: not hiring an out-of-state producer right now; Jenni may refer the candidates to other agencies.", "as_of": "2026-11-06", "source": "Gmail: David to Jenni 11/6"}]}, "checks": {}}</script>
+<script>
+/* Stand-in for the Claude dashboard runtime: serves the saved data and runs the page's own drawing code. */
+(function () {
+  const RAW = JSON.parse(document.getElementById('rose-data').textContent);
+  window.SIG = { checks: RAW.checks || {}, db: null, canEdit: false, me: null };
+  const loaders = {}, calcs = {}, draws = {}, cache = {};
+  function get(id) {
+    if (cache[id]) return cache[id];
+    if (calcs[id]) {
+      const c = calcs[id];
+      const args = (c.inputs || []).map((i) => { const v = get(i); return v.status === 'ok' ? v.data : (calcs[i] ? null : []); });
+      try { cache[id] = { status: 'ok', data: c.fn(...args) }; }
+      catch (e) { console.error(id, e); cache[id] = { status: 'error', data: null, message: String(e) }; }
+      return cache[id];
+    }
+    if (Object.prototype.hasOwnProperty.call(RAW.data, id)) {
+      let d = RAW.data[id];
+      if (loaders[id]) {
+        try { d = loaders[id].fn({ answer: d, text: JSON.stringify(d) }); }
+        catch (e) { console.error(id, e); return (cache[id] = { status: 'error', data: [], message: String(e) }); }
+      }
+      return (cache[id] = { status: 'ok', data: d });
+    }
+    return { status: 'missing', data: [] };
+  }
+  function run(name) {
+    const fn = draws[name]; if (!fn) return;
+    document.querySelectorAll('[data-draw="' + name + '"]').forEach((el) => { try { fn(el); } catch (e) { console.error(name, e); } });
+  }
+  window.dash = {
+    data: (id) => Object.assign({ refreshing: false, meta: {} }, get(id)),
+    calc: (id, spec) => { calcs[id] = spec; },
+    loader: (id, spec) => { loaders[id] = spec; },
+    draw: (name, fn) => { if (typeof fn === 'function') draws[name] = fn; else run(name); },
+    onData: (fn) => { try { fn(); } catch (e) { console.error(e); } },
+    refresh: () => {}, params: () => ({}), setParams: () => {}, resetParams: () => {}, setLink: () => {},
+    colors: ['#21418a', '#2f7d4f', '#a2541b', '#8a6d12', '#6b675e'],
+    _runAll: () => Object.keys(draws).forEach(run)
+  };
+})();
+</script>
+
+<style>
+.sig { font-family: var(--font-anthropic-sans); color: var(--color-fg); display: flex; flex-direction: column; gap: var(--cds-gap-xl); }
+.sig-head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cds-gap-lg); }
+.sig-logo { background: #ffffff; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-sm) var(--cds-pad-md); flex: 0 0 auto; }
+.sig-logo img { display: block; width: 190px; max-width: 100%; height: auto; }
+.sig-headtext { flex: 1 1 260px; min-width: 0; }
+.sig-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; line-height: 1.15; }
+.sig-sub { margin: 4px 0 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.sig-take { margin: var(--cds-gap-sm) 0 0; font-size: var(--cds-font-size-body); line-height: 1.5; }
+.sig-take b { font-weight: var(--cds-font-weight-medium); }
+.sig-nav { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+.sig-nav a { font-size: var(--cds-font-size-caption); color: var(--color-fg); text-decoration: none; border: 1px solid var(--color-border-line); border-radius: 999px; padding: 4px 12px; background: var(--color-panel); }
+.sig-nav a:hover { border-color: var(--color-fg-muted); }
+.sig-sec { display: flex; flex-direction: column; gap: var(--cds-gap-md); scroll-margin-top: 12px; }
+.sig-sec-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--cds-gap-sm); border-bottom: 2px solid #0f4c6e; padding-bottom: var(--cds-pad-sm); }
+.sig-sec-head h2 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.sig-sec-head p { margin: 2px 0 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.sig-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.sig-toggle .sig-seg { display: inline-flex; border: 1px solid var(--color-border-line); border-radius: 999px; overflow: hidden; }
+.sig-toggle button { font: inherit; color: var(--color-fg); background: var(--color-panel); border: 0; padding: 4px 14px; cursor: pointer; }
+.sig-toggle button + button { border-left: 1px solid var(--color-border-line); }
+.sig-toggle button[aria-pressed="true"] { background: #0f4c6e; color: #ffffff; }
+.sig-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--cds-gap-md); min-height: 80px; }
+.sig-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.sig-card h3 { margin: 0; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+.sig-card .sig-role { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.sig-cardtop { display: flex; justify-content: space-between; gap: var(--cds-gap-sm); align-items: flex-start; }
+.sig-badge { font-size: 11px; border-radius: 999px; padding: 2px 8px; white-space: nowrap; border: 1px solid var(--color-border-line); color: var(--color-fg-muted); }
+.sig-badge.on { color: var(--color-ok); border-color: currentColor; }
+.sig-meets { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cds-gap-sm); }
+.sig-meet { border-radius: calc(var(--cds-radius) - 2px); background: var(--color-bg); padding: var(--cds-pad-sm); min-width: 0; }
+.sig-meet .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--color-fg-muted); }
+.sig-meet .when { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; margin-top: 2px; }
+.sig-meet .what, .sig-meet .who { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); overflow-wrap: anywhere; }
+.sig-meet .none { font-size: var(--cds-font-size-caption); color: var(--color-warn); margin-top: 2px; }
+.sig-work { margin: 0; font-size: var(--cds-font-size-caption); line-height: 1.55; }
+.sig-bullets { margin: 0; padding-left: 18px; font-size: var(--cds-font-size-caption); line-height: 1.5; display: flex; flex-direction: column; gap: 4px; }
+.sig-bullets li::marker { color: #0f4c6e; }
+.sig-work strong { font-weight: var(--cds-font-weight-medium); }
+.sig-foot { font-size: 11px; color: var(--color-fg-muted); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.sig-foot a { color: inherit; }
+.sig-empty { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); padding: var(--cds-pad-md); border: 1px dashed var(--color-border-line); border-radius: var(--cds-radius); }
+.sig-tablewrap { overflow-x: auto; border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-panel); }
+.sig-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); }
+.sig-table th { text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: 8px 12px; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.sig-table td { padding: 10px 12px; border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.sig-table tr:last-child td { border-bottom: 0; }
+.sig-table td.nowrap { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sig-table .overdue { color: var(--color-bad); }
+.sig-stages { display: flex; gap: 4px; flex-wrap: wrap; }
+.sig-stage { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--color-border-line); color: var(--color-fg-muted); white-space: nowrap; }
+.sig-stage.done { background: color-mix(in srgb, #0f4c6e 18%, transparent); color: var(--color-fg); }
+.sig-stage.now { background: #0f4c6e; color: #fff; border-color: #0f4c6e; }
+.sig-origin { font-size: 11px; color: var(--color-fg-muted); }
+.sig-check { display: inline-block; width: 16px; height: 16px; border: 1.5px solid var(--color-fg-muted); border-radius: 4px; line-height: 14px; text-align: center; font-size: 12px; }
+.sig-check.done { background: var(--color-ok); border-color: var(--color-ok); color: #fff; }
+.sig-cb { width: 16px; height: 16px; accent-color: var(--color-ok); cursor: pointer; margin: 0; }
+.sig-table tr.sig-grp td { background: var(--color-bg); font-weight: var(--cds-font-weight-medium); font-size: var(--cds-font-size-caption); color: var(--color-fg); padding-top: 12px; }
+.sig-lib { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: var(--cds-gap-sm); min-height: 40px; }
+.sig-lib li { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sig-lib a { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); font-size: var(--cds-font-size-body); text-decoration: none; overflow-wrap: anywhere; }
+.sig-lib a:hover { text-decoration: underline; }
+.sig-lib .meta { font-size: 11px; color: var(--color-fg-muted); }
+.sig-lib li.sig-libgroup { grid-column: 1 / -1; background: none; border: 0; border-bottom: 1px solid var(--color-border-line); border-radius: 0; padding: var(--cds-pad-sm) 0 4px; margin-top: var(--cds-gap-sm); }
+.sig-lib li.sig-libgroup a { font-size: var(--cds-font-size-caption); text-transform: uppercase; letter-spacing: .04em; color: var(--color-fg-muted); }
+.sig-lib li.sig-libempty { grid-column: 1 / -1; border-style: dashed; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.sig-libfolder { color: inherit; }
+.sig-donetask { text-decoration: line-through; color: var(--color-fg-muted); }
+.sig-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.sig-details { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.sig-details summary { cursor: pointer; }
+.sig-details ul { margin: 8px 0 0; padding-left: 18px; line-height: 1.6; }
+[data-dash-source-state=refreshing] { opacity: .5; }
+@media (max-width: 420px) { .sig-meets { grid-template-columns: 1fr; } }
+
+/* frozen section menu */
+.sig-nav { position: sticky; top: 0; z-index: 30; background: var(--color-bg); padding: 10px 0; box-shadow: 0 1px 0 var(--color-border-line); }
+section[id] { scroll-margin-top: 64px; }
+
+/* past notes */
+.sig-hist { font-size: var(--cds-font-size-caption); border-top: 1px dashed var(--color-border-line); padding-top: 6px; }
+.sig-hist summary { cursor: pointer; color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); }
+.sig-hist-entry { margin-top: 8px; }
+.sig-hist-date { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--color-fg-muted); margin-bottom: 2px; }
+
+/* frozen logo in the section menu */
+.sig-nav { align-items: center; }
+.sig-navlogo { display: inline-flex; align-items: center; margin-right: 6px; }
+.sig-navlogo:empty { display: none; }
+.sig-navlogo img { display: block; height: 30px; width: auto; max-width: 140px; object-fit: contain; background: #ffffff; border: 1px solid var(--color-border-line); border-radius: 6px; padding: 2px 6px; }
+section[id] { scroll-margin-top: 72px; }
+</style>
+
+<div class="sig">
+  <header class="sig-head" id="top">
+    <div class="sig-logo"><img src="data:image/png;base64,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" alt="Southern Insurance Group"></div>
+    <div class="sig-headtext">
+      <h1 class="sig-title">Southern Insurance Group</h1>
+      <p class="sig-sub">Client dashboard · Impact Performance Team</p>
+    </div>
+  </header>
+
+  <nav class="sig-nav" aria-label="Sections"><span class="sig-navlogo" aria-hidden="true"></span>
+    <a href="#sales">Sales</a><a href="#sales-call">Sales Call</a><a href="#leadership">Leadership</a><a href="#service">Service &amp; Ops</a><a href="#recruiting">Recruiting</a><a href="#library">Client Library</a><a href="#tasks">Open tasks</a>
+  </nav>
+
+  <section class="sig-sec" id="sales">
+    <div class="sig-sec-head">
+      <div><h2>Sales</h2><p>Producers</p></div>
+    </div>
+    <div class="sig-cards" data-draw="cards" data-sec="sales" data-source="roster"></div>
+  </section>
+
+  <section class="sig-sec" id="sales-call">
+    <div class="sig-sec-head">
+      <div><h2>Sales Call</h2><p>Weekly CL Sales Meeting with Patrick and the producers</p></div>
+    </div>
+    <div class="sig-cards" data-draw="cards" data-sec="sales_call" data-source="roster"></div>
+  </section>
+
+  <section class="sig-sec" id="leadership">
+    <div class="sig-sec-head">
+      <div><h2>Leadership</h2></div>
+    </div>
+    <div class="sig-cards" data-draw="cards" data-sec="leadership" data-source="roster"></div>
+  </section>
+
+  <section class="sig-sec" id="service">
+    <div class="sig-sec-head">
+      <div><h2>Service &amp; Ops</h2><p>Service and operations team members Savannah meets with</p></div>
+    </div>
+    <div class="sig-cards" data-draw="cards" data-sec="service" data-source="roster"></div>
+  </section>
+
+  <section class="sig-sec" id="recruiting">
+    <div class="sig-sec-head">
+      <div><h2>Recruiting</h2><p>Roles IPT is recruiting for</p></div>
+    </div>
+    <div class="sig-tablewrap">
+      <table class="sig-table" data-source="recruiting" data-row-key="key">
+        <thead><tr><th data-field="role">Role</th><th data-field="stage">Stage</th><th data-field="hire">Hire</th><th data-field="notes">Notes</th></tr></thead>
+        <tbody data-draw="recruiting"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sig-sec" id="library">
+    <div class="sig-sec-head">
+      <div><h2>Client Library</h2></div>
+    </div>
+    <ul class="sig-lib" data-draw="library" data-source="library"></ul>
+  </section>
+
+  <section class="sig-sec" id="tasks">
+    <div class="sig-sec-head">
+      <div><h2>Open tasks</h2><p>David Ashton</p></div>
+    </div>
+    <div class="sig-tablewrap">
+      <table class="sig-table" data-source="tasks_all" data-row-key="key">
+        <thead><tr><th data-field="active"><span class="sig-sr">Done</span></th><th data-field="task">Task</th><th data-field="due">Due</th><th data-field="from">From</th></tr></thead>
+        <tbody data-draw="tasks"></tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// Rolling window for the HubSpot meeting query: 45 days back, 60 days ahead.
+(function () {
+  const day = 86400000, now = Date.now();
+  const iso = (t) => new Date(t).toISOString().slice(0, 10);
+  const p = dash.params();
+  const since = iso(now - 45 * day), until = iso(now + 60 * day);
+  if (p.since !== since || p.until !== until) dash.setParams({ since, until });
+})();
+
+
+dash.loader('meetings', {
+  description: 'Flattens each HubSpot meeting record into one row of its properties.',
+  fn: ({ answer }) => {
+    let a = answer;
+    if (typeof a === 'string') { try { a = JSON.parse(a); } catch (e) { throw new Error(a); } }
+    if (!a || !Array.isArray(a.results)) throw new Error('HubSpot returned no results list');
+    return a.results.map((r) => Object.assign({ id: String(r.id) }, r.properties || {}));
+  }
+});
+
+dash.loader('hs_tasks', {
+  description: 'Flattens each HubSpot task record into one row of its properties.',
+  fn: ({ answer }) => {
+    let a = answer;
+    if (typeof a === 'string') { try { a = JSON.parse(a); } catch (e) { throw new Error(a); } }
+    if (!a || !Array.isArray(a.results)) throw new Error('HubSpot returned no results list');
+    return a.results.map((r) => Object.assign({ id: String(r.id) }, r.properties || {}));
+  }
+});
+
+dash.loader('owners', {
+  description: 'Turns the HubSpot owners list into rows of owner id and name.',
+  fn: ({ answer }) => {
+    let a = answer;
+    if (typeof a === 'string') { try { a = JSON.parse(a); } catch (e) { throw new Error(a); } }
+    const list = (a && a.owners) || [];
+    return list.map((o) => ({ ownerId: String(o.ownerId), name: o.name, isActive: o.isActive }));
+  }
+});
+
+dash.loader('library', {
+  description: 'Turns the Google Drive file list into rows of title, type, last modified and link.',
+  fn: ({ answer }) => {
+    let a = answer;
+    if (typeof a === 'string') { try { a = JSON.parse(a); } catch (e) { throw new Error(a); } }
+    const files = (a && Array.isArray(a.files)) ? a.files : [];
+    return files.map((f) => ({ id: String(f.id), title: f.title || '', mimeType: f.mimeType || '', modifiedTime: f.modifiedTime || '', viewUrl: f.viewUrl || '', folder: f.folder || '', folderUrl: f.folderUrl || '' }));
+  }
+});
+
+dash.calc('roster', {
+  inputs: ['people', 'meetings', 'owners'],
+  title: 'People with last and next IPT meeting',
+  description: 'Each person or group from the notes, with their latest past and earliest upcoming HubSpot meeting whose title matches them (and, where set, that includes the IPT owner).',
+  fn: (people, meetings, owners) => {
+    const names = {};
+    owners.forEach((o) => { names[o.ownerId] = o.name; });
+    const now = Date.now();
+    const skip = { CANCELED: 1, NO_SHOW: 1, RESCHEDULED: 1 };
+    return people.map((p) => {
+      const words = String(p.match || '').split('|').map((w) => w.trim().toLowerCase()).filter(Boolean);
+      const hits = meetings.filter((m) => {
+        const title = String(m.hs_meeting_title || '').toLowerCase();
+        if (!words.some((w) => title.includes(w))) return false;
+        if (skip[m.hs_meeting_outcome]) return false;
+        if (p.ipt_owner) {
+          const ids = [m.hubspot_owner_id].concat(String(m.hs_attendee_owner_ids || '').split(';'));
+          if (!ids.includes(String(p.ipt_owner))) return false;
+        }
+        return true;
+      }).map((m) => {
+        const ids = [m.hubspot_owner_id].concat(String(m.hs_attendee_owner_ids || '').split(';')).filter(Boolean);
+        const who = [...new Set(ids)].map((i) => names[i]).filter(Boolean).join(', ');
+        return { t: Date.parse(m.hs_meeting_start_time), title: String(m.hs_meeting_title || '').trim(), who };
+      }).filter((m) => !isNaN(m.t));
+      const past = hits.filter((m) => m.t <= now).sort((a, b) => b.t - a.t)[0];
+      const next = hits.filter((m) => m.t > now).sort((a, b) => a.t - b.t)[0];
+      return {
+        key: p.key, section: p.section, order: Number(p.order), name: p.name, role: p.role, active: p.active,
+        last_date: past ? new Date(past.t).toISOString() : (p.fallback_last_date || ''),
+        last_title: past ? past.title : (p.fallback_last_title || ''),
+        last_with: past ? past.who : (p.fallback_last_with || ''),
+        last_from: past ? 'HubSpot' : 'notes',
+        next_date: next ? new Date(next.t).toISOString() : (meetings.length ? '' : (p.fallback_next_date || '')),
+        next_title: next ? next.title : (meetings.length ? '' : (p.fallback_next_title || '')),
+        next_with: next ? next.who : (meetings.length ? '' : (p.fallback_next_with || '')),
+        next_from: next ? 'HubSpot' : 'notes',
+        working_on: p.working_on, as_of: p.as_of, history: (typeof p.history === 'string' ? p.history : JSON.stringify(p.history || [])), source: p.source, hubspot_id: p.hubspot_id || ''
+      };
+    });
+  }
+});
+
+dash.calc('tasks_all', {
+  inputs: ['action_items'],
+  title: 'SIG team tasks',
+  description: 'Action items for SIG team members from recent call recaps. IPT team tasks are left out.',
+  fn: (action_items) => action_items.map((a) => ({
+    key: a.key, owner: a.owner, task: a.task, due: a.due || '', active: a.active, from: a.from,
+    done_on: a.done_on || '', done_note: a.done_note || ''
+  }))
+});
+
+dash.calc('summary', {
+  inputs: ['roster', 'tasks_all'],
+  title: 'Headline: next touchpoint and open tasks',
+  description: 'The earliest upcoming IPT meeting across active people and groups.',
+  fn: (roster, tasks_all) => {
+    const upcoming = (roster || []).filter((r) => r.active === 'Yes' && r.next_date)
+      .sort((a, b) => Date.parse(a.next_date) - Date.parse(b.next_date))[0];
+    return [{
+      next_title: upcoming ? upcoming.next_title : '',
+      next_date: upcoming ? upcoming.next_date : ''
+    }];
+  }
+});
+</script>
+
+<script>
+(function () {
+  for (const a of document.querySelectorAll('.sig-nav a')) {
+    a.addEventListener('click', () => dash.setLink(a.getAttribute('href').slice(1)));
+  }
+})();
+
+window.sigFmt = function (v) {
+  if (!v) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(v)) return d3.utcFormat('%a %b %-d')(new Date(v + 'T00:00:00Z'));
+  const d = new Date(v);
+  return isNaN(d) ? v : d3.timeFormat('%a %b %-d · %-I:%M %p')(d);
+};
+window.sigFmtDay = function (v) {
+  if (!v) return '';
+  return d3.utcFormat('%b %-d')(new Date(v.slice(0, 10) + 'T00:00:00Z'));
+};
+
+function sigMark(el, source, field, key) {
+  el.setAttribute('data-source', source);
+  el.setAttribute('data-field', field);
+  el.setAttribute('data-where', 'key=' + encodeURIComponent(key));
+  return el;
+}
+window.sigMark = sigMark;
+
+function sigEl(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+window.sigEl = sigEl;
+
+
+window.sigPast = function (raw) {
+  let h = raw;
+  for (let i = 0; i < 3 && typeof h === 'string'; i++) { try { h = JSON.parse(h || '[]'); } catch (e) { h = []; } }
+  if (!Array.isArray(h)) return null;
+  h = h.filter((e) => e && (e.working_on || e.notes)).sort((a, b) => String(b.as_of || '').localeCompare(String(a.as_of || '')));
+  if (!h.length) return null;
+  const det = sigEl('details', 'sig-hist');
+  det.append(sigEl('summary', null, 'Past notes (' + h.length + ')'));
+  h.forEach((e) => {
+    const blk = sigEl('div', 'sig-hist-entry');
+    blk.append(sigEl('div', 'sig-hist-date', (e.meeting ? e.meeting + ' · ' : '') + (window.sigFmt(e.as_of) || '')));
+    const ul = sigEl('ul', 'sig-bullets');
+    String(e.working_on || e.notes || '').split(/\n|(?<=[.!?])\s+(?=[A-Z0-9$(“"])/).map((s) => s.replace(/^[•\-\s]+/, '').trim()).filter(Boolean).forEach((s) => ul.append(sigEl('li', null, s)));
+    blk.append(ul);
+    det.append(blk);
+  });
+  return det;
+};
+
+dash.draw('cards', (el) => {
+  const sec = el.getAttribute('data-sec');
+  const r = dash.data('roster');
+  if (r.status !== 'ok' || !Array.isArray(r.data)) {
+    el.replaceChildren();
+    if (r.status === 'loading') { el.classList.add('dash-skeleton'); }
+    else { el.classList.remove('dash-skeleton'); el.append(sigEl('div', 'sig-empty', r.status === 'connect' ? 'Waiting for HubSpot access…' : 'Failed to load')); }
+    return;
+  }
+  el.classList.remove('dash-skeleton');
+  const want = 'Yes';
+  const rows = r.data.filter((x) => x.section === sec && x.active === want).sort((a, b) => a.order - b.order);
+  if (!rows.length) {
+    el.replaceChildren(sigEl('div', 'sig-empty', want === 'Yes' ? 'No active entries in this section.' : 'No inactive entries in this section.'));
+    return;
+  }
+  const cards = rows.map((x) => {
+    const c = sigEl('article', 'sig-card');
+    c.id = 'card-' + x.key;
+    const top = sigEl('div', 'sig-cardtop');
+    const head = sigEl('div');
+    head.append(sigMark(sigEl('h3', null, x.name), 'roster', 'name', x.key));
+    head.append(sigMark(sigEl('p', 'sig-role', x.role), 'roster', 'role', x.key));
+    top.append(head);
+    c.append(top);
+
+    const meets = sigEl('div', 'sig-meets');
+    [['last', 'Last IPT meeting'], ['next', 'Next IPT meeting']].forEach(([k, label]) => {
+      const m = sigEl('div', 'sig-meet');
+      m.append(sigEl('div', 'lbl', label));
+      if (x[k + '_date']) {
+        m.append(sigMark(sigEl('div', 'when', window.sigFmt(x[k + '_date'])), 'roster', k + '_date', x.key));
+        m.append(sigMark(sigEl('div', 'what', x[k + '_title']), 'roster', k + '_title', x.key));
+        if (x[k + '_with']) {
+          const w = sigEl('div', 'who', 'with ');
+          w.append(sigMark(sigEl('span', null, x[k + '_with']), 'roster', k + '_with', x.key));
+          m.append(w);
+        }
+      } else {
+        m.append(sigEl('div', 'none', k === 'next' ? 'None scheduled in HubSpot' : 'None found'));
+      }
+      meets.append(m);
+    });
+    c.append(meets);
+
+    const lines = String(x.working_on || '').split(/\n|(?<=[.!?])\s+(?=[A-Z0-9$(“"])/).map((s) => s.replace(/^[•\-\s]+/, '').trim()).filter(Boolean);
+    if (lines.length > 1) {
+      const ul = sigMark(sigEl('ul', 'sig-bullets'), 'roster', 'working_on', x.key);
+      lines.forEach((s) => ul.append(sigEl('li', null, s)));
+      c.append(ul);
+    } else {
+      const work = sigEl('p', 'sig-work');
+      work.append(sigMark(sigEl('span', null, x.working_on), 'roster', 'working_on', x.key));
+      c.append(work);
+    }
+
+    const past = window.sigPast(x.history);
+    if (past) c.append(past);
+    const foot = sigEl('div', 'sig-foot');
+    const asof = sigEl('span', null, 'Notes as of ');
+    asof.append(sigMark(sigEl('span', null, window.sigFmt(x.as_of)), 'roster', 'as_of', x.key));
+    foot.append(asof);
+    c.append(foot);
+    return c;
+  });
+  el.replaceChildren(...cards);
+});
+
+window.SIG = window.SIG || { checks: {}, db: null, canEdit: false, me: null };
+window.sigIsDone = function (x) {
+  const c = window.SIG.checks[x.key];
+  return c && typeof c.done === 'boolean' ? c.done : x.active === 'No';
+};
+(async () => {
+  if (!window.claude || !window.claude.use) return;
+  const db = await window.claude.use('db');
+  if (!db) return;
+  const user = await window.claude.use('user');
+  window.SIG.db = db;
+  window.SIG.canEdit = user ? (await user.canEdit()) === true : false;
+  window.SIG.me = user ? await user.id() : null;
+  db.collection('task_checks').onSnapshot((snap) => {
+    const next = {};
+    for (const doc of snap.docs) next[doc.id] = doc.data();
+    window.SIG.checks = next;
+    dash.draw('tasks');
+  }, () => {});
+  dash.draw('tasks');
+})();
+
+const SIG_KIND = (m) => /folder/.test(m) ? 'Folder' : /document/.test(m) ? 'Doc' : /spreadsheet|excel|sheet/.test(m) ? 'Sheet' : /presentation|powerpoint/.test(m) ? 'Slides' : /pdf/.test(m) ? 'PDF' : /image/.test(m) ? 'Image' : 'File';
+dash.draw('library', (ul) => {
+  const r = dash.data('library');
+  if (r.status === 'loading') { ul.replaceChildren(); return; }
+  const item = (f, source, pinned) => {
+    const li = sigEl('li');
+    const a = sigEl('a', null, f.title);
+    a.href = f.viewUrl; a.target = '_blank'; a.rel = 'noopener';
+    a.setAttribute('data-source', source); a.setAttribute('data-field', 'title'); a.setAttribute('data-where', 'id=' + encodeURIComponent(f.id));
+    li.append(a);
+    li.append(sigEl('span', 'meta', (pinned ? 'Pinned · ' : '') + SIG_KIND(f.mimeType) + (f.modifiedTime ? ' · updated ' + window.sigFmtDay(f.modifiedTime) : '')));
+    return li;
+  };
+  const out = [];
+  if (r.status === 'ok') {
+    const groupNames = new Set(r.data.filter((f) => f.folder).map((f) => f.folder));
+    r.data.filter((f) => !f.folder && !(/folder/.test(f.mimeType) && groupNames.has(f.title))).forEach((f) => out.push(item(f, 'library', false)));
+    const groups = [];
+    r.data.filter((f) => f.folder).forEach((f) => {
+      let g = groups.find((x) => x.name === f.folder);
+      if (!g) { g = { name: f.folder, url: f.folderUrl, files: [] }; groups.push(g); }
+      g.files.push(f);
+    });
+    groups.sort((x, y) => x.name.localeCompare(y.name)).forEach((g) => {
+      const h = sigEl('li', 'sig-libgroup');
+      const ha = sigEl('a', null, g.name + ' (folder)');
+      if (g.url) { ha.href = g.url; ha.target = '_blank'; ha.rel = 'noopener'; }
+      h.append(ha);
+      out.push(h);
+      g.files.sort((x, y) => x.title.localeCompare(y.title)).forEach((f) => out.push(item(f, 'library', false)));
+    });
+  }
+  const bad = [r].find((x) => x.status !== 'ok' && x.status !== 'loading');
+  if (!out.length) {
+    out.push(sigEl('li', 'sig-libempty', bad ? (bad.status === 'connect' ? 'Waiting for Google Drive access…' : 'Failed to load') : 'Nothing has been shared in the client folder yet.'));
+  }
+  ul.replaceChildren(...out);
+});
+
+const SIG_STAGES = ['Active candidates', 'Onboarding', 'Role filled'];
+
+dash.draw('recruiting', (tb) => {
+  const r = dash.data('recruiting');
+  if (r.status !== 'ok') {
+    tb.replaceChildren();
+    if (r.status !== 'loading') { const tr = sigEl('tr'); const td = sigEl('td', null, 'Failed to load'); td.colSpan = 4; tr.append(td); tb.append(tr); }
+    return;
+  }
+  const want = 'Yes';
+  const rows = r.data.filter((x) => x.active === want).sort((a, b) => Number(a.order) - Number(b.order));
+  if (!rows.length) {
+    const tr = sigEl('tr'); const td = sigEl('td', 'sig-origin', want === 'Yes' ? 'No open SIG roles right now. Nothing for Southern Insurance Group is posted in Workable.' : 'No inactive roles.'); td.colSpan = 4; tr.append(td);
+    tb.replaceChildren(tr);
+    return;
+  }
+  tb.replaceChildren(...rows.map((x) => {
+    const tr = sigEl('tr'); tr.setAttribute('data-key', encodeURIComponent(x.key));
+    tr.append(sigEl('td', null, x.role));
+    const st = sigEl('td');
+    const at = SIG_STAGES.indexOf(x.stage);
+    st.append(sigEl('span', 'sig-stage' + (at < 0 ? '' : ' now'), at < 0 ? 'Not launched' : x.stage));
+    tr.append(st);
+    tr.append(sigEl('td', null, x.hire || '—'));
+    tr.append(sigEl('td', null, x.notes));
+    return tr;
+  }));
+});
+
+dash.draw('tasks', (tb) => {
+  const r = dash.data('tasks_all');
+  if (r.status !== 'ok' || !Array.isArray(r.data)) {
+    tb.replaceChildren();
+    if (r.status !== 'loading') { const tr = sigEl('tr'); const td = sigEl('td', null, 'Failed to load'); td.colSpan = 4; tr.append(td); tb.append(tr); }
+    return;
+  }
+  const want = 'Yes';
+  const SIG_TASK_OWNERS = ['David Ashton'];
+  const today = new Date().toISOString().slice(0, 10);
+  const S = window.SIG;
+  /* completed tasks stay visible for one week after they were checked off, then drop off; open tasks always stay */
+  const cut = new Date(); cut.setUTCHours(0, 0, 0, 0); cut.setUTCDate(cut.getUTCDate() - 7);
+  const showTask = (x) => {
+    if (!window.sigIsDone(x)) return want === 'Yes';
+    const c = S.checks[x.key];
+    const doneOn = c && c.done && c.doneAt ? c.doneAt : x.done_on;
+    return !!doneOn && new Date(String(doneOn).slice(0, 10)) >= cut;
+  };
+  const rows = r.data.filter((x) => SIG_TASK_OWNERS.includes(x.owner) && showTask(x)).sort((a, b) =>
+    String(a.owner).localeCompare(String(b.owner)) || (window.sigIsDone(a) - window.sigIsDone(b)) || String(a.due || '9999').localeCompare(String(b.due || '9999')));
+  if (!rows.length) {
+    const tr = sigEl('tr'); const td = sigEl('td', 'sig-origin', want === 'Yes' ? 'No open tasks.' : 'No completed tasks yet.'); td.colSpan = 4; tr.append(td);
+    tb.replaceChildren(tr);
+    return;
+  }
+  let lastOwner = null;
+  tb.replaceChildren(...rows.flatMap((x) => {
+    const out = [];
+    if (x.owner !== lastOwner) {
+      lastOwner = x.owner;
+      const g = sigEl('tr', 'sig-grp'); const gd = sigEl('td', null, x.owner); gd.colSpan = 4; g.append(gd);
+      out.push(g);
+    }
+    const done = window.sigIsDone(x);
+    const chk = S.checks[x.key];
+    const tr = sigEl('tr'); tr.setAttribute('data-key', encodeURIComponent(x.key));
+    const ck = sigEl('td');
+    if (S.canEdit && S.db) {
+      const box = document.createElement('input');
+      box.type = 'checkbox'; box.className = 'sig-cb'; box.checked = done;
+      box.setAttribute('aria-label', (done ? 'Mark open: ' : 'Mark done: ') + x.task);
+      box.addEventListener('change', async () => {
+        const body = box.checked
+          ? { done: true, doneAt: new Date().toISOString(), doneBy: S.me || null }
+          : { done: false, doneAt: null, doneBy: S.me || null };
+        const prev = S.checks[x.key];
+        S.checks = Object.assign({}, S.checks, { [x.key]: body });
+        dash.draw('tasks');
+        try { await S.db.doc('task_checks/' + x.key).set(body); }
+        catch (e) { S.checks = Object.assign({}, S.checks, { [x.key]: prev }); dash.draw('tasks'); }
+      });
+      ck.append(box);
+    } else {
+      const box = sigEl('span', 'sig-check' + (done ? ' done' : ''), done ? '✓' : '');
+      box.setAttribute('role', 'img'); box.setAttribute('aria-label', done ? 'Completed' : 'Open');
+      ck.append(box);
+    }
+    tr.append(ck);
+    const task = sigEl('td');
+    task.append(sigEl('div', done ? 'sig-donetask' : null, x.task));
+    const doneOn = chk && chk.done && chk.doneAt ? chk.doneAt : x.done_on;
+    const doneNote = chk && chk.done ? '' : x.done_note;
+    if (done && (doneOn || doneNote)) {
+      task.append(sigEl('div', 'sig-origin', 'Done' + (doneOn ? ' ' + window.sigFmtDay(doneOn) : '') + (doneNote ? ': ' + doneNote : '')));
+    }
+    tr.append(task);
+    tr.append(sigEl('td', 'nowrap' + (!done && x.due && x.due < today ? ' overdue' : ''), x.due ? window.sigFmtDay(x.due) : '—'));
+    tr.append(sigEl('td', 'sig-origin', x.from));
+    out.push(tr);
+    return out;
+  }));
+});
+
+dash.draw('next_title', (el) => {
+  const s = dash.data('summary');
+  el.textContent = s.status === 'ok' && s.data && s.data[0] && s.data[0].next_title ? s.data[0].next_title : '—';
+});
+dash.draw('next_date', (el) => {
+  const s = dash.data('summary');
+  el.textContent = s.status === 'ok' && s.data && s.data[0] && s.data[0].next_date ? window.sigFmt(s.data[0].next_date) : '—';
+});
+</script>
+
+<script>
+(function () {
+  const slot = document.querySelector('.sig-navlogo');
+  const box = document.querySelector('.sig-head .sig-logo');
+  if (!slot || !box) return;
+  const sync = () => {
+    const img = box.querySelector('img');
+    if (!img || !img.getAttribute('src')) return;
+    const cur = slot.querySelector('img');
+    if (cur && cur.getAttribute('src') === img.getAttribute('src')) return;
+    const c = document.createElement('img');
+    c.src = img.getAttribute('src');
+    c.alt = '';
+    slot.replaceChildren(c);
+  };
+  sync();
+  new MutationObserver(sync).observe(box, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+})();
+</script>
+
+<script>dash._runAll();</script>
+</div></body></html>
